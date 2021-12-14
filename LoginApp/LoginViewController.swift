@@ -77,6 +77,8 @@ class LoginViewController: UIViewController {
     
     private func login() {
         guard userTextField.text == userName, passwordTextField.text == password else {
+            userTextField.text?.removeAll()
+            passwordTextField.text?.removeAll()
             incorrectLogAlert()
             return
         }
