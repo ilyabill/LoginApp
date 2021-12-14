@@ -11,6 +11,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var logPassStackView: UIStackView!
     
     
     
@@ -19,6 +20,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         userTextField.delegate = self
         passwordTextField.delegate = self
         
@@ -33,16 +35,28 @@ class LoginViewController: UIViewController {
     }
     
     
+    @IBAction func unwind(_ sender: UIStoryboardSegue) {
+        userTextField.text?.removeAll()
+        passwordTextField.text?.removeAll()
+    }
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
     
     
-    @IBAction func unwind(_ sender: UIStoryboardSegue) {
-        userTextField.text?.removeAll()
-        passwordTextField.text?.removeAll()
-    }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+            super.viewWillTransition(to: size, with: coordinator)
+            if UIDevice.current.orientation.isLandscape {
+                print("Landscape")
+                logPassStackView.axis = .horizontal
+            } else {
+                print("Portrait")
+                logPassStackView.axis = .vertical
+            }
+        }
     
     
     @IBAction func logInPressed() {
@@ -59,7 +73,7 @@ class LoginViewController: UIViewController {
     @IBAction func forgotPasswordPressed(_ sender: Any) {
         showPasswordAllert()
     }
-    
+
     
     private func login() {
         guard userTextField.text == userName, passwordTextField.text == password else {

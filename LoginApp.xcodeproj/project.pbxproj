@@ -14,7 +14,6 @@
 		10ECF2D82768B13C009BE927 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10ECF2D72768B13C009BE927 /* Assets.xcassets */; };
 		10ECF2DB2768B13C009BE927 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10ECF2D92768B13C009BE927 /* LaunchScreen.storyboard */; };
 		10ECF2E32768B2AD009BE927 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ECF2E22768B2AD009BE927 /* WelcomeViewController.swift */; };
-		10ECF2E52768BC3F009BE927 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ECF2E42768BC3F009BE927 /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		10ECF2DA2768B13C009BE927 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10ECF2DC2768B13C009BE927 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10ECF2E22768B2AD009BE927 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		10ECF2E42768BC3F009BE927 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +62,6 @@
 				10ECF2D02768B13A009BE927 /* SceneDelegate.swift */,
 				10ECF2D22768B13A009BE927 /* LoginViewController.swift */,
 				10ECF2E22768B2AD009BE927 /* WelcomeViewController.swift */,
-				10ECF2E42768BC3F009BE927 /* GradientView.swift */,
 				10ECF2D42768B13A009BE927 /* Main.storyboard */,
 				10ECF2D72768B13C009BE927 /* Assets.xcassets */,
 				10ECF2D92768B13C009BE927 /* LaunchScreen.storyboard */,
@@ -146,7 +143,6 @@
 			files = (
 				10ECF2D32768B13A009BE927 /* LoginViewController.swift in Sources */,
 				10ECF2E32768B2AD009BE927 /* WelcomeViewController.swift in Sources */,
-				10ECF2E52768BC3F009BE927 /* GradientView.swift in Sources */,
 				10ECF2CF2768B13A009BE927 /* AppDelegate.swift in Sources */,
 				10ECF2D12768B13A009BE927 /* SceneDelegate.swift in Sources */,
 			);
