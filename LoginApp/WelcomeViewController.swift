@@ -20,11 +20,6 @@ class WelcomeViewController: UIViewController {
         welcomeLabel.text = "Welcome, \(userName ?? "User")!"
         
     }
-
-    
-    @IBAction func logOutPressed() {
-        dismiss(animated: true)
-    }
     
     
 }

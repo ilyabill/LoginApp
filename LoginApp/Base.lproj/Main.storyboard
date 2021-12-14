@@ -27,7 +27,7 @@
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="AX8-3s-4r5"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" textContentType="username"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
                                             </textField>
                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GjU-Rr-sxw">
                                                 <rect key="frame" x="0.0" y="49" width="200" height="34"/>
@@ -35,7 +35,7 @@
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="tgP-4K-zOc"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="join" secureTextEntry="YES" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="join" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -127,7 +127,6 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="logOutPressed" destination="kg7-4F-rYb" eventType="touchUpInside" id="lmu-jA-b4L"/>
                                     <segue destination="dga-i9-o3h" kind="unwind" unwindAction="unwind:" id="QGo-T0-msn"/>
                                 </connections>
                             </button>
