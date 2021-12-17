@@ -24,14 +24,13 @@ class LoginViewController: UIViewController {
         userTextField.delegate = self
         passwordTextField.delegate = self
         
+        
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToWelcome" {
-            let destinationVC = segue.destination as! WelcomeViewController
-            destinationVC.userName = userTextField.text
-        }
+        let destinationVC = segue.destination as! WelcomeViewController
+        destinationVC.userName = userTextField.text
     }
     
     
@@ -48,19 +47,25 @@ class LoginViewController: UIViewController {
     
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-            super.viewWillTransition(to: size, with: coordinator)
-            if UIDevice.current.orientation.isLandscape {
-                print("Landscape")
-                logPassStackView.axis = .horizontal
-            } else {
-                print("Portrait")
-                logPassStackView.axis = .vertical
-            }
+        super.viewWillTransition(to: size, with: coordinator)
+        if UIDevice.current.orientation.isLandscape {
+            print("Landscape")
+            logPassStackView.axis = .horizontal
+        } else {
+            print("Portrait")
+            logPassStackView.axis = .vertical
         }
+    }
     
     
     @IBAction func logInPressed() {
-        login()
+        guard userTextField.text == userName, passwordTextField.text == password else {
+            userTextField.text?.removeAll()
+            passwordTextField.text?.removeAll()
+            incorrectLogAlert()
+            return
+        }
+        performSegue(withIdentifier: "goToWelcome", sender: nil)
     }
     
     
@@ -73,17 +78,7 @@ class LoginViewController: UIViewController {
     @IBAction func forgotPasswordPressed(_ sender: Any) {
         showPasswordAllert()
     }
-
     
-    private func login() {
-        guard userTextField.text == userName, passwordTextField.text == password else {
-            userTextField.text?.removeAll()
-            passwordTextField.text?.removeAll()
-            incorrectLogAlert()
-            return
-        }
-        self.performSegue(withIdentifier: "goToWelcome", sender: self)
-    }
     
     
 }
@@ -93,18 +88,18 @@ class LoginViewController: UIViewController {
 extension LoginViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        switch textField.tag {
-        case 0:
-            userTextField.resignFirstResponder()
-            passwordTextField.becomeFirstResponder()
-        default:
+        
+        if textField.tag == 0 {
             passwordTextField.resignFirstResponder()
-            login()
+        } else {
+            logInPressed()
         }
+ 
         return true
     }
     
 }
+
 
 
 

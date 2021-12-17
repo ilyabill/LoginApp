@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10E84912276B84690047EB30 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E84911276B84690047EB30 /* CustomTextField.swift */; };
 		10ECF2CF2768B13A009BE927 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ECF2CE2768B13A009BE927 /* AppDelegate.swift */; };
 		10ECF2D12768B13A009BE927 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ECF2D02768B13A009BE927 /* SceneDelegate.swift */; };
 		10ECF2D32768B13A009BE927 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ECF2D22768B13A009BE927 /* LoginViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10E84911276B84690047EB30 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		10ECF2CB2768B13A009BE927 /* LoginApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10ECF2CE2768B13A009BE927 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10ECF2D02768B13A009BE927 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				10ECF2D02768B13A009BE927 /* SceneDelegate.swift */,
 				10ECF2D22768B13A009BE927 /* LoginViewController.swift */,
 				10ECF2E22768B2AD009BE927 /* WelcomeViewController.swift */,
+				10E84911276B84690047EB30 /* CustomTextField.swift */,
 				10ECF2D42768B13A009BE927 /* Main.storyboard */,
 				10ECF2D72768B13C009BE927 /* Assets.xcassets */,
 				10ECF2D92768B13C009BE927 /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 				10ECF2E32768B2AD009BE927 /* WelcomeViewController.swift in Sources */,
 				10ECF2CF2768B13A009BE927 /* AppDelegate.swift in Sources */,
 				10ECF2D12768B13A009BE927 /* SceneDelegate.swift in Sources */,
+				10E84912276B84690047EB30 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
