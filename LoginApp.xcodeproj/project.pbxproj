@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1020FF10276F537B004B3ECE /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1020FF0F276F537B004B3ECE /* AboutMeViewController.swift */; };
+		1020FF12276F547E004B3ECE /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1020FF11276F547E004B3ECE /* InfoViewController.swift */; };
+		10AAE949276F71C8005B5923 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AAE948276F71C8005B5923 /* Model.swift */; };
 		10E84912276B84690047EB30 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E84911276B84690047EB30 /* CustomTextField.swift */; };
 		10ECF2CF2768B13A009BE927 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ECF2CE2768B13A009BE927 /* AppDelegate.swift */; };
 		10ECF2D12768B13A009BE927 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ECF2D02768B13A009BE927 /* SceneDelegate.swift */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1020FF0F276F537B004B3ECE /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
+		1020FF11276F547E004B3ECE /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		10AAE948276F71C8005B5923 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		10E84911276B84690047EB30 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		10ECF2CB2768B13A009BE927 /* LoginApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10ECF2CE2768B13A009BE927 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +47,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1020FF0A276F4F09004B3ECE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				10ECF2D22768B13A009BE927 /* LoginViewController.swift */,
+				10ECF2E22768B2AD009BE927 /* WelcomeViewController.swift */,
+				1020FF0F276F537B004B3ECE /* AboutMeViewController.swift */,
+				1020FF11276F547E004B3ECE /* InfoViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1020FF0B276F4F4A004B3ECE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				10ECF2D42768B13A009BE927 /* Main.storyboard */,
+				10ECF2D92768B13C009BE927 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1020FF0C276F4F5C004B3ECE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				10AAE948276F71C8005B5923 /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1020FF0D276F4FD4004B3ECE /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				10E84911276B84690047EB30 /* CustomTextField.swift */,
+				10ECF2CE2768B13A009BE927 /* AppDelegate.swift */,
+				10ECF2DC2768B13C009BE927 /* Info.plist */,
+				10ECF2D02768B13A009BE927 /* SceneDelegate.swift */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		1020FF0E276F4FF2004B3ECE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				10ECF2D72768B13C009BE927 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		10ECF2C22768B13A009BE927 = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +113,11 @@
 		10ECF2CD2768B13A009BE927 /* LoginApp */ = {
 			isa = PBXGroup;
 			children = (
-				10ECF2CE2768B13A009BE927 /* AppDelegate.swift */,
-				10ECF2D02768B13A009BE927 /* SceneDelegate.swift */,
-				10ECF2D22768B13A009BE927 /* LoginViewController.swift */,
-				10ECF2E22768B2AD009BE927 /* WelcomeViewController.swift */,
-				10E84911276B84690047EB30 /* CustomTextField.swift */,
-				10ECF2D42768B13A009BE927 /* Main.storyboard */,
-				10ECF2D72768B13C009BE927 /* Assets.xcassets */,
-				10ECF2D92768B13C009BE927 /* LaunchScreen.storyboard */,
-				10ECF2DC2768B13C009BE927 /* Info.plist */,
+				1020FF0C276F4F5C004B3ECE /* Models */,
+				1020FF0B276F4F4A004B3ECE /* Views */,
+				1020FF0A276F4F09004B3ECE /* Controllers */,
+				1020FF0E276F4FF2004B3ECE /* Resources */,
+				1020FF0D276F4FD4004B3ECE /* SupportFiles */,
 			);
 			path = LoginApp;
 			sourceTree = "<group>";
@@ -147,7 +196,10 @@
 				10ECF2D32768B13A009BE927 /* LoginViewController.swift in Sources */,
 				10ECF2E32768B2AD009BE927 /* WelcomeViewController.swift in Sources */,
 				10ECF2CF2768B13A009BE927 /* AppDelegate.swift in Sources */,
+				1020FF12276F547E004B3ECE /* InfoViewController.swift in Sources */,
 				10ECF2D12768B13A009BE927 /* SceneDelegate.swift in Sources */,
+				1020FF10276F537B004B3ECE /* AboutMeViewController.swift in Sources */,
+				10AAE949276F71C8005B5923 /* Model.swift in Sources */,
 				10E84912276B84690047EB30 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,7 +351,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 69R52T495A;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LoginApp/Info.plist;
+				INFOPLIST_FILE = LoginApp/SupportFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -327,7 +379,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 69R52T495A;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LoginApp/Info.plist;
+				INFOPLIST_FILE = LoginApp/SupportFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

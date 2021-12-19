@@ -15,8 +15,7 @@ class LoginViewController: UIViewController {
     
     
     
-    private let userName = "Eugenya"
-    private let password = "1234"
+    let person = DataBase.getPerson()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +27,29 @@ class LoginViewController: UIViewController {
     }
     
     
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //        let destinationVC = segue.destination as! WelcomeViewController
+    //        destinationVC.userName = userTextField.text
+    //    }
+    //
+    // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! WelcomeViewController
-        destinationVC.userName = userTextField.text
+        
+        let tabBarController = segue.destination as! UITabBarController
+        
+        if let viewControllers = tabBarController.viewControllers {
+            
+            for viewController in viewControllers {
+                if let welcomeVC = viewController as? WelcomeViewController {
+                    welcomeVC.person = person
+                } else if let navigationVC = viewController as? UINavigationController {
+                    let aboutUserVC = navigationVC.topViewController as! AboutMeViewController
+                    aboutUserVC.person = person
+                }
+                
+            }
+            
+        }
     }
     
     
@@ -59,7 +78,7 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func logInPressed() {
-        guard userTextField.text == userName, passwordTextField.text == password else {
+        guard userTextField.text == person.userName, passwordTextField.text == person.password else {
             userTextField.text?.removeAll()
             passwordTextField.text?.removeAll()
             incorrectLogAlert()
@@ -94,7 +113,7 @@ extension LoginViewController: UITextFieldDelegate {
         } else {
             logInPressed()
         }
- 
+        
         return true
     }
     
@@ -109,9 +128,9 @@ extension LoginViewController: UITextFieldDelegate {
 extension LoginViewController {
     
     private func showUserNameAllert() {
-        let alert = UIAlertController(title: "😱", message: "your username: \(userName)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "😱", message: "your username: \(person.userName)", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            self.userTextField.text = self.userName
+            self.userTextField.text = self.person.userName
         }
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
@@ -119,9 +138,9 @@ extension LoginViewController {
     
     
     private func showPasswordAllert() {
-        let alert = UIAlertController(title: "😱", message: "your password: \(password)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "😱", message: "your password: \(person.password)", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            self.passwordTextField.text = self.password
+            self.passwordTextField.text = self.person.password
         }
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
