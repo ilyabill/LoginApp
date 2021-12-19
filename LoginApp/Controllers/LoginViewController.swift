@@ -27,11 +27,7 @@ class LoginViewController: UIViewController {
     }
     
     
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        let destinationVC = segue.destination as! WelcomeViewController
-    //        destinationVC.userName = userTextField.text
-    //    }
-    //
+
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -40,11 +36,16 @@ class LoginViewController: UIViewController {
         if let viewControllers = tabBarController.viewControllers {
             
             for viewController in viewControllers {
+                
                 if let welcomeVC = viewController as? WelcomeViewController {
+                    
                     welcomeVC.person = person
+                    
                 } else if let navigationVC = viewController as? UINavigationController {
+                    
                     let aboutUserVC = navigationVC.topViewController as! AboutMeViewController
                     aboutUserVC.person = person
+                    
                 }
                 
             }
