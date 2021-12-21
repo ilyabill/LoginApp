@@ -13,9 +13,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var logPassStackView: UIStackView!
     
-    
-    
-    let person = DataBase.getPerson()
+    let user = User.getUser()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,40 +21,22 @@ class LoginViewController: UIViewController {
         userTextField.delegate = self
         passwordTextField.delegate = self
         
-        
     }
     
-    
+    //MARK: - Navigation
 
-    // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let tabBarController = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBarController.viewControllers else { return }
         
-        let tabBarController = segue.destination as! UITabBarController
-        
-        if let viewControllers = tabBarController.viewControllers {
-            
-            for viewController in viewControllers {
-                
-                if let welcomeVC = viewController as? WelcomeViewController {
-                    
-                    welcomeVC.person = person
-                    
-                } else if let navigationVC = viewController as? UINavigationController {
-                    
-                    let aboutUserVC = navigationVC.topViewController as! AboutMeViewController
-                    aboutUserVC.person = person
-                    
-                }
-                
+        for viewController in viewControllers {
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.user = user
+            } else if let navigationVC = viewController as? UINavigationController {
+                let aboutUserVC = navigationVC.topViewController as! AboutMeViewController
+                aboutUserVC.user = user
             }
-            
         }
-    }
-    
-    
-    @IBAction func unwind(_ sender: UIStoryboardSegue) {
-        userTextField.text?.removeAll()
-        passwordTextField.text?.removeAll()
     }
     
     
@@ -77,9 +57,17 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBAction func unwind(_ sender: UIStoryboardSegue) {
+        userTextField.text?.removeAll()
+        passwordTextField.text?.removeAll()
+    }
+    
+    
+
+    
     
     @IBAction func logInPressed() {
-        guard userTextField.text == person.userName, passwordTextField.text == person.password else {
+        guard userTextField.text == user.userName, passwordTextField.text == user.password else {
             userTextField.text?.removeAll()
             passwordTextField.text?.removeAll()
             incorrectLogAlert()
@@ -110,7 +98,7 @@ extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if textField.tag == 0 {
-            passwordTextField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
         } else {
             logInPressed()
         }
@@ -129,9 +117,9 @@ extension LoginViewController: UITextFieldDelegate {
 extension LoginViewController {
     
     private func showUserNameAllert() {
-        let alert = UIAlertController(title: "😱", message: "your username: \(person.userName)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "😱", message: "your username: \(user.userName)", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            self.userTextField.text = self.person.userName
+            self.userTextField.text = self.user.userName
         }
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
@@ -139,9 +127,9 @@ extension LoginViewController {
     
     
     private func showPasswordAllert() {
-        let alert = UIAlertController(title: "😱", message: "your password: \(person.password)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "😱", message: "your password: \(user.password)", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            self.passwordTextField.text = self.person.password
+            self.passwordTextField.text = self.user.password
         }
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)

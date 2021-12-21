@@ -7,13 +7,16 @@
 
 import UIKit
 
-struct DataBase {
+struct User {
     
-    static func getPerson() -> Person{
-        Person(userName: "Ilya",
-               password: "123456",
-               image: UIImage(named: "myImage")!,
-               aboutMe: "I work as a design engineer, create complex 3D models and drawings, I want to retrain as an iOS developer")
+    let userName: String
+    let password: String
+    let person: Person
+    static func getUser() -> User{
+        User(userName: "Ilya",
+             password: "123456",
+             person: Person(image: UIImage(named: "myImage") ?? UIImage(),
+                            aboutMe: "I work as a design engineer, create complex 3D models and drawings, I want to retrain as an iOS developer"))
     }
     
 }
@@ -21,9 +24,7 @@ struct DataBase {
 
 
 struct Person {
-    
-    let userName: String
-    let password: String
+
     let image: UIImage
     let aboutMe: String
     

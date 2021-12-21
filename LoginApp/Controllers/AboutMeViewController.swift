@@ -9,13 +9,12 @@ import UIKit
 
 class AboutMeViewController: UIViewController {
 
-    var person: Person?
+    var user: User?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let destinationVC = segue.destination as! InfoViewController
-        destinationVC.person = person
-        
+        destinationVC.user = user   
     }
 
 }
